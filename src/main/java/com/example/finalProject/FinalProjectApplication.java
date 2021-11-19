@@ -18,18 +18,18 @@ public class FinalProjectApplication implements CommandLineRunner {
 	private StudentRepository studentRepository;
 	@Override
 	public void run(String... args) throws Exception {
-		Student student = new Student();
-		student.setFirstName("Kenneth");
-		student.setLastName("Mañalac");
-		student.setAddress("Candaba");
-		student.setEmailId("kennethmanalac@gmail.com");
-		studentRepository.save(student);
-
-		Student student1 = new Student();
-		student1.setFirstName("iron");
-		student1.setLastName("Man");
-		student1.setAddress("newyork");
-		student1.setEmailId("ironman@gmail.com");
-		studentRepository.save(student1);
+//		Student student = new Student();
+//		student.setFirstName("Kenneth");
+//		student.setLastName("Mañalac");
+//		student.setAddress("Candaba");
+//		student.setEmailId("kennethmanalac@gmail.com");
+//		studentRepository.save(student);
+//
+//		Student student1 = new Student();
+//		student1.setFirstName("iron");
+//		student1.setLastName("Man");
+//		student1.setAddress("newyork");
+//		student1.setEmailId("ironman@gmail.com");
+//		studentRepository.save(student1);
 	}
 }
