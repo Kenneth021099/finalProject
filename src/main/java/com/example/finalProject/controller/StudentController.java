@@ -3,10 +3,7 @@ package com.example.finalProject.controller;
 import com.example.finalProject.model.Student;
 import com.example.finalProject.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,6 +18,11 @@ public class StudentController {
     @GetMapping
     public List<Student> getAllStudent(){
         return studentRepository.findAll();
-
     }
+    // build create student REST API
+    @PostMapping
+    public  Student createStudent(@RequestBody Student student){
+        return studentRepository.save(student);
+    }
+
 }
