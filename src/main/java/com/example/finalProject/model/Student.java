@@ -23,7 +23,7 @@ public class Student {
     @Column(name = "firstName")
     private String firstName;
 
-    @Column(name = "lastNname")
+    @Column(name = "lastName")
     private String lastName;
 
     @Column(name = "address")

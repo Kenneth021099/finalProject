@@ -31,5 +31,6 @@ public class FinalProjectApplication implements CommandLineRunner {
 //		student1.setAddress("newyork");
 //		student1.setEmailId("ironman@gmail.com");
 //		studentRepository.save(student1);
+
 	}
 }
