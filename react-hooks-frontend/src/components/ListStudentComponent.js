@@ -28,6 +28,7 @@ const ListStudentsComponent = () => {
                     <th> Student Last Name </th>
                     <th> Student Address </th>
                     <th> Student Email Id </th>
+                    <th> Actions </th>
                 </thead>
                 <tbody>
                     {
@@ -39,6 +40,9 @@ const ListStudentsComponent = () => {
                                 <td> {student.lastName} </td>
                                 <td> {student.address} </td>
                                 <td> {student.emailId} </td>
+                                <td>
+                                    <Link className="btn btn-info" to={`/edit-students/${student.id}`} >Update</Link>
+                                </td>
                             </tr>
                         )
                     }

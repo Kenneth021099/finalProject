@@ -1,4 +1,6 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
+import {useNavigate, useParams} from "react-router-dom";
+import StudentService from "../services/StudentService";
 
 const AddStudentComponent = () => {
 
@@ -6,22 +8,55 @@ const AddStudentComponent = () => {
     const [lastName, setLastName] = useState('')
     const [address, setAddress] = useState('')
     const [emailId, setEmailId] = useState('')
-
-
+    const navigate = useNavigate();
+    const {id} = useParams();
+    
     const saveStudent = (e) => {
         e.preventDefault();
 
         const student = {firstName, lastName, address, emailId }
 
-        console.log(student);
+        StudentService.createStudent(student).then((response) =>{
+            
+            console.log(response.data)
+
+            navigate('/students')
+
+        }).catch(error => {
+            console.log(error)
+        })
+
     }
+
+    useEffect(()=>{
+
+            StudentService.getStudentById(id).then((response) =>{
+                    setFirstName(response.data.firstName)
+                    setLastName(response.data.lastName)
+                    setEmailId(response.data.emailId)
+            }).catch(error =>{
+                console.log(error)
+            })
+    }, [])
+
+    const title = () =>{
+
+        if(id){
+            return <h2 className = "text-center"> Update Student</h2>
+        }else{
+            return <h2 className = "text-center"> Add Student</h2>
+        }
+    }
+
     return (
         <div>
             <br /><br />
             <div className = "container">
                 <div className = "row">
                     <div className = "card col-md-6 offset-md-3 offset-md-3">
-                        <h2 className = "text=center"> Add Student</h2>
+                       {
+                           title()
+                       }
                         <div className = "card-body">
                             <form>
                                 <div className = "form-group mb-2">
