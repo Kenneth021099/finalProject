@@ -10,21 +10,33 @@ const AddStudentComponent = () => {
     const [emailId, setEmailId] = useState('')
     const navigate = useNavigate();
     const {id} = useParams();
+
     
-    const saveStudent = (e) => {
+    const saveOrUpdateStudent = (e) => {
         e.preventDefault();
 
         const student = {firstName, lastName, address, emailId }
 
-        StudentService.createStudent(student).then((response) =>{
+        if(id){
+                StudentService.updateStudent(id, student).then((response) =>{
+                    navigate('/students')
+                }).catch(error =>{
+                    console.log(error);
+                })
+
+        }else{
+            StudentService.createStudent(student).then((response) =>{
             
-            console.log(response.data)
+                console.log(response.data)
+    
+                navigate('/students')
+    
+            }).catch(error => {
+                console.log(error)
+            })
+        }
 
-            navigate('/students')
-
-        }).catch(error => {
-            console.log(error)
-        })
+        
 
     }
 
@@ -37,7 +49,7 @@ const AddStudentComponent = () => {
             }).catch(error =>{
                 console.log(error)
             })
-    }, [])
+    }, [id])
 
     const title = () =>{
 
@@ -113,7 +125,7 @@ const AddStudentComponent = () => {
                                     </input>
                                 </div>
 
-                                <button className = "btn btn-success" onClick = {(e) => saveStudent(e)}>Submit</button>
+                                <button className = "btn btn-success" onClick = {(e) => saveOrUpdateStudent(e)}>Submit</button>
 
                             </form>
 

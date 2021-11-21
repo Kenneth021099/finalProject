@@ -4,12 +4,13 @@ import com.example.finalProject.exception.ResourceNotFoundException;
 import com.example.finalProject.model.Student;
 import com.example.finalProject.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin("http://localhost:3000/")
+@CrossOrigin(origins = "http://localhost:3000/")
 @RestController
 @RequestMapping("/api/v1/students")
 public class StudentController {
@@ -50,5 +51,17 @@ public class StudentController {
         return ResponseEntity.ok(updateStudent);
     }
 
+    @DeleteMapping("{id}")
+    public ResponseEntity<HttpStatus> deleteStudent(@PathVariable long id){
+
+        Student student = studentRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Student not exist with id: " +id));
+
+        studentRepository.delete(student);
+
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+
+    }
 
 }
