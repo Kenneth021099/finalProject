@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 import '../../src/App.css';
 import logo from "../img/HAU.png"
+import { Link } from 'react-router-dom'
 
 class HeaderComponent extends Component {
     render() {
+        const buttonStyle = {
+            marginLeft:"1500px",
+            backgroundColor:"black",
+            height:"50px",
+            width:"100px"
+        }
+       
+
         return (
             <div>
                 <header>
@@ -11,6 +20,8 @@ class HeaderComponent extends Component {
                         <div>
                             <a href="/" className ="navbar-brand">
                             <img src={logo} alt="logo" />
+                            
+                            <Link className ="btn btn-info" to ={"/students"} style ={buttonStyle} > TONNY BURAT</Link>
                             </a>
                         </div>
 
