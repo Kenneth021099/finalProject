@@ -39,6 +39,12 @@ const AddStudentComponent = () => {
         
 
     }
+    
+    const cancel = (e) => {
+        e.preventDefault();
+        navigate('/students')
+
+    }
 
     useEffect(()=>{
 
@@ -129,6 +135,8 @@ const AddStudentComponent = () => {
 
                                 <button className = "btn btn-success" onClick = {(e) => saveOrUpdateStudent(e)}>Submit</button>
 
+                                <button className = "btn btn-danger" onClick = {(e) => cancel(e)}style ={{marginLeft:"20px"}}>Cancel</button>
+
                             </form>
 
                         </div>
@@ -143,3 +151,4 @@ const AddStudentComponent = () => {
 }
 
 export default AddStudentComponent
+
