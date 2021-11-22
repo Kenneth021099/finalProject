@@ -7,9 +7,10 @@ class HeaderComponent extends Component {
     render() {
         const buttonStyle = {
             marginLeft:"1500px",
-            backgroundColor:"black",
+            backgroundColor:"maroon",
             height:"50px",
-            width:"100px"
+            width:"200px",
+            color: "white"
         }
        
 
@@ -21,7 +22,7 @@ class HeaderComponent extends Component {
                             <a href="/" className ="navbar-brand">
                             <img src={logo} alt="logo" />
                             
-                            <Link className ="btn btn-info" to ={"/students"} style ={buttonStyle} > TONNY BURAT</Link>
+                            <Link className ="btn btn-info" to ={"/students"} style ={buttonStyle} > Adding Student</Link>
                             </a>
                         </div>
 
