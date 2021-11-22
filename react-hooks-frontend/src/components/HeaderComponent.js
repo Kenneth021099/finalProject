@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ('../../src/App.css');
+import '../../src/App.css';
+import logo from "../img/HAU.png"
 
 class HeaderComponent extends Component {
     render() {
@@ -8,8 +9,8 @@ class HeaderComponent extends Component {
                 <header>
                     <nav className = "navbar navbar-expand-md">
                         <div>
-                            <a href = "https://javaguides.net" className = "navbar-band">
-                                Student Management Application
+                            <a href="/" className ="navbar-brand">
+                            <img src={logo} alt="logo" />
                             </a>
                         </div>
 
