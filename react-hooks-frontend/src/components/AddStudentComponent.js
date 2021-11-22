@@ -135,7 +135,7 @@ const AddStudentComponent = () => {
 
                                 <button className = "btn btn-success" onClick = {(e) => saveOrUpdateStudent(e)}>Submit</button>
 
-                                <button className = "btn btn-danger" onClick = {(e) => cancel(e)}style ={{marginLeft:"20px"}}>Cancel</button>
+                                <button className = "btn btn-danger" onClick = {(e) => cancel(e)}style ={{marginLeft:"25px"}}>Cancel</button>
 
                             </form>
 
