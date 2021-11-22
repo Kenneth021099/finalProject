@@ -46,6 +46,8 @@ const AddStudentComponent = () => {
                     setFirstName(response.data.firstName)
                     setLastName(response.data.lastName)
                     setEmailId(response.data.emailId)
+                    setAddress(response.data.address)
+                    
             }).catch(error =>{
                 console.log(error)
             })
