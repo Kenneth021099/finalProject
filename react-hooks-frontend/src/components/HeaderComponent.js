@@ -22,7 +22,7 @@ class HeaderComponent extends Component {
                             <a href="/" className ="navbar-brand">
                             <img src={logo} alt="logo" />
                             
-                            <Link className ="btn btn-info" to ={"/students"} style ={buttonStyle} > Adding Student</Link>
+                            <Link className ="btn btn-info" to ={"/login"} style ={buttonStyle} > Login</Link>
                             </a>
                         </div>
 

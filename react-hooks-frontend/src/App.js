@@ -4,8 +4,9 @@ import FooterComponent from './components/FooterComponent';
 import HeaderComponent from './components/HeaderComponent';
 import ListStudentsComponent from './components/ListStudentComponent';
 import AddStudentComponent from './components/AddStudentComponent';
-import HomePageComponent from './components/HomeCarousel';
 import HomeCarousel from './components/HomeCarousel';
+import Main from './components/Main';
+
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
                 <Route path = "/students" element = {<ListStudentsComponent/>}/>
                 <Route path = "/add-students" element = {<AddStudentComponent/>}/>
                 <Route path = "/edit-students/:id" element = {<AddStudentComponent/>}/>
-                
+                <Route path = "/login" element = {<Main/>}/>
             </Routes>
         </div>
         <FooterComponent />

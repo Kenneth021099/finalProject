@@ -3,6 +3,7 @@ package com.example.finalProject.controller;
 import com.example.finalProject.exception.ResourceNotFoundException;
 import com.example.finalProject.model.Student;
 import com.example.finalProject.repository.StudentRepository;
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @CrossOrigin(origins = {"http://localhost:3000/"})
 @RestController
+@Getter
 @RequestMapping("/api/v1/students")
 public class StudentController {
 

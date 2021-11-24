@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Carousel from 'react-bootstrap/Carousel';
+import { Link } from 'react-router-dom';
 
 export default function App() {
 return (
@@ -42,7 +43,6 @@ src="https://www.friendsofholyangel.org/assets/images/img-4810-1776x1184.jpg"
 		</Carousel.Caption>
 		</Carousel.Item>
 	</Carousel>
-
   
 	</div>
 );
